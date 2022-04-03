@@ -36,3 +36,52 @@
     transform: rotate(360deg);
   }
 }
+
+button {
+  margin-right: 5px;
+}
+
+.post-form-textarea {
+  width: 100%;
+  height: 300px;
+  resize: none;
+  outline: 0;
+}
+
+.reg-wrapper {
+  display: flex;
+  width: 12rem;
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.post-header-wrapper {
+  padding-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  justify-content: space-between;
+}
+
+.small-text {
+  font-weight: normal;
+  font-size: .85rem;
+}
+
+.post-header-info-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-actions-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.edit-post-btn {
+  box-sizing: content-box;
+  padding: .25em;
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+}
