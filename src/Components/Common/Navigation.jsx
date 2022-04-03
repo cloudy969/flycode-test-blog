@@ -18,7 +18,7 @@ export default function Navigation() {
     const logout = () => {
         localStorage.clear();
         setIsAuth(false)
-        navigation('/')
+        // navigation('/')
     }
 
     let userName = JSON.parse(localStorage.getItem('currentUser'))?.name;

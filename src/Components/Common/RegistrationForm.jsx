@@ -14,7 +14,7 @@ export default function RegistrationForm() {
     let handleRegistration = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        registrationAPI.sendRegistrationaData(setIsSuccess)
+        registrationAPI.sendRegistrationaData(name, email, password, passwordConfirmation)
     }
 
     return (
