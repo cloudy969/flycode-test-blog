@@ -16,6 +16,7 @@ export default function LogInForm(props) {
         await authAPI.getToken(email, password);
         await authAPI.getCurrentUserData();
         props.setIsAuth(true)
+        navigate('/')
     };
 
 
