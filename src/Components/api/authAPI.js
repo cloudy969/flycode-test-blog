@@ -1,6 +1,5 @@
 import axios from "axios";
 import { baseURL } from "../Common/baseURL";
-import { token } from "../Common/token";
 
 
 export const authAPI = {
@@ -12,6 +11,7 @@ export const authAPI = {
     },
 
     getCurrentUserData() {
+        let token = localStorage.getItem('userToken');
         return axios.get(baseURL + 'user/self', {
             headers: {
                 Authorization: `Bearer ${token}`,

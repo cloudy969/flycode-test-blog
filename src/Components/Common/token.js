@@ -1,1 +1,0 @@
-export let token = localStorage.getItem('userToken');

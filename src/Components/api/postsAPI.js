@@ -1,6 +1,5 @@
 import axios from "axios";
 import { baseURL } from "../Common/baseURL";
-import { token } from "../Common/token";
 
 export const postsAPI = {
 
@@ -14,6 +13,7 @@ export const postsAPI = {
     },
 
     sendNewPost(newPostText) {
+        let token = localStorage.getItem('userToken');
         axios.post(baseURL + 'post', 
         {text: newPostText}, {
             headers: {
@@ -29,6 +29,7 @@ export const postsAPI = {
     },
 
     removePost(post) {
+        let token = localStorage.getItem('userToken');
         axios.delete(baseURL + `post/${post.id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
@@ -43,6 +44,7 @@ export const postsAPI = {
     },
 
     changePost(post, text) {
+        let token = localStorage.getItem('userToken');
         axios.patch(baseURL + `post/${post.id}`, {text}, {
             headers: {
                 Authorization: `Bearer ${token}`,
