@@ -13,12 +13,12 @@ export default function MyPosts() {
   useEffect(() => {
     postsAPI.getPosts(setPosts);
   }, [])
- 
 
-  let ownPost = posts.map(post => post.user_id === currentUser?.id ? <li key={post.id}> <Post key={post.id} post={post} /> </li> : null )
-  
+
+  let ownPost = posts.map(post => post.user_id === currentUser?.id ? <li key={post.id}> <Post key={post.id} post={post} /> </li> : null)
+
   return (
-      <Container className='pt-3 pb-3'>
+    <Container className='pt-3 pb-3'>
       <ul>
         {ownPost}
       </ul>

@@ -16,7 +16,7 @@ export default function RegistrationModal(props) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <RegistrationForm />
+          <RegistrationForm onHide={props.onHide} />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Отмена</Button>

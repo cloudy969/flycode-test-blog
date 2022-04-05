@@ -3,18 +3,18 @@ import { Button, Form } from 'react-bootstrap';
 import { registrationAPI } from '../api/registrationAPI';
 
 
-export default function RegistrationForm() {
-    
+export default function RegistrationForm(props) {
+    debugger
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
-    const [isSuccess, setIsSuccess] = useState(false);
 
     let handleRegistration = (e) => {
         e.preventDefault();
         e.stopPropagation();
         registrationAPI.sendRegistrationaData(name, email, password, passwordConfirmation)
+        props.onHide()
     }
 
     return (

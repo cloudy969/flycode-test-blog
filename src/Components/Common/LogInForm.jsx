@@ -13,8 +13,8 @@ export default function LogInForm(props) {
 
     async function login(e) {
         e.preventDefault();
-        await authAPI.getToken(email, password);
-        await authAPI.getCurrentUserData();
+        await authAPI.getUserData(email, password);
+        // await authAPI.getCurrentUserData();
         props.setIsAuth(true)
         navigate('/')
     };
