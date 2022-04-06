@@ -5,12 +5,12 @@ import ChangePost from './ChangePost';
 
 
 export default function Post(props) {
-
     let currentUser = JSON.parse(localStorage.getItem('currentUser'))
+
 
     let removePost = (e) => {
         e.preventDefault();
-        postsAPI.removePost(props.post)
+        postsAPI.removePost(props.post, props.setIsUpdated)
     };
 
     let formatedCreateDate = 
@@ -29,8 +29,11 @@ export default function Post(props) {
                             Пользователь {props.post.user_id}
                             <small className='text-muted small-text'>Опубликовано {formatedCreateDate}</small>
                         </div>
-                        {props.post.user_id == currentUser?.id && 
-                        <div className='post-actions-wrapper'> <ChangePost post={props.post}/> <CloseButton onClick={(e) => removePost(e)} /> </div>}
+                        {props.post.user_id === currentUser?.id && 
+                        <div className='post-actions-wrapper'> 
+                        <ChangePost setIsUpdated={props.setIsUpdated} post={props.post}/> 
+                        <CloseButton onClick={(e) => removePost(e)} /> 
+                        </div>}
                     </div>
 
                 </Card.Title>

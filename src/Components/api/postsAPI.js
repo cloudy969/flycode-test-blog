@@ -12,7 +12,7 @@ export const postsAPI = {
             .catch(error => console.log(error));
     },
 
-    sendNewPost(newPostText) {
+    sendNewPost(newPostText, setIsAdded) {
         let token = localStorage.getItem('userToken');
         axios.post(baseURL + 'post', 
         {text: newPostText}, {
@@ -20,36 +20,29 @@ export const postsAPI = {
                 Authorization: `Bearer ${token}`
             },
         })
-            .then(response => {
-                if (response.status == 200) {
-                    console.log(response)
-                }
-            })
+            .then(() => setIsAdded(true))
             .catch(error => console.log(error))
     },
 
-    removePost(post) {
+    removePost(post, setIsUpdate) {
         let token = localStorage.getItem('userToken');
         axios.delete(baseURL + `post/${post.id}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
         })
-        .then(response => {
-            if (response.status == 200) {
-                console.log(response.status)
-            } 
-        })
+        .then(() => setIsUpdate(true))
         .catch(error => console.log(error));
     },
 
-    changePost(post, text) {
+    changePost(post, text, setIsUpdate) {
         let token = localStorage.getItem('userToken');
         axios.patch(baseURL + `post/${post.id}`, {text}, {
             headers: {
                 Authorization: `Bearer ${token}`,
             }
         })
+        .then(() => setIsUpdate(true))
         .catch(error => console.log(error))
     }
 

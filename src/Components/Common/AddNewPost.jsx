@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import NewPostModal from './NewPostModal';
 
 
-export default function AddNewPost() {
+export default function AddNewPost(props) {
     const [modalShow, setModalShow] = useState(false);
 
     return (
@@ -13,6 +13,7 @@ export default function AddNewPost() {
         </Button>
   
         <NewPostModal
+          {...props}
           show={modalShow}
           onHide={() => setModalShow(false)}
         />

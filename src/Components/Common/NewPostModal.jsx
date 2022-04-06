@@ -17,7 +17,7 @@ export default function NewPostModal(props) {
             </Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <NewPostForm />
+            <NewPostForm {...props} onHide={props.onHide} />
           </Modal.Body>
           <Modal.Footer>
             <Button onClick={props.onHide}>Отмена</Button>

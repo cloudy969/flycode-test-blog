@@ -7,7 +7,7 @@ import style from './ProfileBlock.module.css'
 export default function ProfileBlock(props) {
     return (
         <div className={style.wrapper}>
-            <AddNewPost />
+            <AddNewPost {...props} />
             {props.userName}
             <Button onClick={props.logout} variant="outline-danger">Выход</Button>
         </div>

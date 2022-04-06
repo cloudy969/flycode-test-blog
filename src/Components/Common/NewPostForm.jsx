@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { postsAPI } from '../api/postsAPI';
 
-export default function NewPostForm() {
+export default function NewPostForm(props) {
 
     let navigation = useNavigate();
 
@@ -11,8 +11,9 @@ export default function NewPostForm() {
 
     const sendNewPost = (e) => {
         e.preventDefault();
-        postsAPI.sendNewPost(newPostText);
-        navigation('/my-posts')
+        postsAPI.sendNewPost(newPostText, props.setIsAdded);
+        navigation('/my-posts');
+        props.onHide();
     }
 
 

@@ -16,8 +16,7 @@ export const authAPI = {
                         Authorization: `Bearer ${token}`,
                     }
                 }).then(response => localStorage.setItem('currentUser', JSON.stringify(response.data))).catch(err => console.log(err))
-            })
-            .catch(error => console.log(error))
+            }).catch(error => console.log(error))
 
         // getToken(email, password) {
         //     return axios.post(baseURL + 'token', { email, password }).then(response => {

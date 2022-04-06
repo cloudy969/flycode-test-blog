@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import { Button, Modal } from 'react-bootstrap';
 import { postsAPI } from '../api/postsAPI';
 import { ReactComponent as EditPost } from '../Assets/changePost.svg'
@@ -9,8 +9,10 @@ export default function ChangePost(props) {
     const [postText, setPostText] = useState(props.post.text)
 
     let changePost = (e) => {
+
         e.preventDefault();
-        postsAPI.changePost(props.post, postText)
+        e.stopPropagation();
+        postsAPI.changePost(props.post, postText, props.setIsUpdated);
         setModalShow(false);
     }
 
